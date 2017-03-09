@@ -17,7 +17,7 @@ app.use('/bower_components',  express.static( path.join(__dirname, '/bower_compo
 //Defining middleware to serve static files
 app.use('/static', express.static('public'));
 
-app.get("/home", function(req, res){
+app.get("/", function(req, res){
   res.render("home")
 });
 
