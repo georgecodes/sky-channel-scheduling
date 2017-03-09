@@ -1,0 +1,21 @@
+{
+  "name": "sky-control-app",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "George McIntosh <george@elevenware.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3"
+  }
+}
