@@ -1,0 +1,74 @@
+[
+  {
+    "description": "  As a user of Cucumber.js\n  I want to have documentation on Cucumber\n  So that I can concentrate on building awesome applications",
+    "keyword": "Feature",
+    "line": 2,
+    "name": "Example feature",
+    "tags": [],
+    "uri": "/Users/george/work/elevenware/sky-control-app/features/documentation.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Reading documentation",
+        "tags": [],
+        "id": "example-feature;reading-documentation",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I am on the Cucumber.js GitHub repository",
+            "result": {
+              "status": "passed",
+              "duration": 2187
+            },
+            "line": 8,
+            "match": {
+              "location": "/Users/george/work/elevenware/sky-control-app/features/step_definitions/browser_steps.js:6"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I click on \"CLI\"",
+            "result": {
+              "status": "passed",
+              "duration": 131
+            },
+            "line": 9,
+            "match": {
+              "location": "/Users/george/work/elevenware/sky-control-app/features/step_definitions/browser_steps.js:10"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should see \"Running specific features\"",
+            "result": {
+              "status": "failed",
+              "duration": 5003,
+              "error_message": "Error: function timed out after 5000 milliseconds\n    at Timeout._onTimeout (/Users/george/work/elevenware/sky-control-app/node_modules/cucumber/lib/user_code_runner.js:91:22)\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "line": 10,
+            "match": {
+              "location": "/Users/george/work/elevenware/sky-control-app/features/step_definitions/browser_steps.js:16"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After",
+            "result": {
+              "status": "passed",
+              "duration": 57
+            },
+            "hidden": true,
+            "match": {
+              "location": "/Users/george/work/elevenware/sky-control-app/features/step_definitions/hooks.js:5"
+            }
+          }
+        ]
+      }
+    ],
+    "id": "example-feature"
+  }
+]
