@@ -1,9 +1,14 @@
-var bookshelf = require('../bookshelf');
+var SkyBox = function(config) {
 
-var SkyBox = bookshelf.Model.extend({
-	tableName: 'sky_boxes'
-});
+	var bookshelf = require('../bookshelf')(config);
+	
+	var SkyBox = bookshelf.Model.extend({
+		tableName: 'sky_boxes'
+	});
+	return SkyBox;
+
+}
 
 module.exports = {
-	SkyBox: SkyBox
+		SkyBox: SkyBox
 };

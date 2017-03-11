@@ -1,8 +1,15 @@
+var environment = process.env.NODE_ENV || 'development'
+
+var config = { "environment": environment };
+
 var express = require("express");
 var bodyParser = require("body-parser");
 
 var app = express();
-var apiApp = require("./controllers/ApiController.js");
+var ApiController = require("./controllers/ApiController.js");
+
+var apiController = new ApiController.ApiController(config);
+
 var webapp = require("./controllers/WebAppController.js");
 var path = require("path");
 
@@ -16,7 +23,7 @@ app.use('/bower_components',  express.static( path.join(__dirname, '/bower_compo
 
 app.use('/static', express.static('public'));
 
-app.use("/api/v1", apiApp);
+app.use("/api/v1", apiController.router);
 app.use("/", webapp);
 
 app.listen(3000,function(){

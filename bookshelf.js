@@ -1,5 +1,11 @@
-const knex = require('knex')(require('./knexfile'));
 
-const bookshelf = require('bookshelf')(knex);
+var Bookshelf = function(config) {
+	const knex = require('knex')(require('./knexfile')[config.environment]);
 
-module.exports = bookshelf;
+	const bookshelf = require('bookshelf')(knex);
+	return bookshelf;
+}
+
+module.exports = function(config) {
+	return new Bookshelf(config);
+}
