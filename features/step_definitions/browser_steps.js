@@ -3,9 +3,15 @@ var seleniumWebdriver = require('selenium-webdriver');
 var {defineSupportCode} = require('cucumber');
 
 defineSupportCode(function({Given, When, Then}) {
+
   Given('I am on the Cucumber.js GitHub repository', function() {
     return this.driver.get('https://github.com/cucumber/cucumber-js/tree/master');
   });
+
+  When('I am on the home page', function () {
+         // Write code here that turns the phrase above into concrete actions
+         return this.driver.get('http://localhost:3000');
+       });
 
   When('I click on {stringInDoubleQuotes}', function (text) {
     return this.driver.findElement({linkText: text}).then(function(element) {

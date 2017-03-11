@@ -5,13 +5,8 @@ module.exports = function(grunt) {
     express: {
             test: {
                 options: {
-                    script: './express_handlebars.js'
+                    script: './server.js'
                 }
-            },
-            apiTest: {
-              options: {
-                script: './server.js'
-              }
             }
 
         },
@@ -29,30 +24,36 @@ module.exports = function(grunt) {
   cucumberjs: {
   options: {
     format: 'html',
-    output: './public/report.html',
-    theme: 'foundation'
+    output: './reports/report.html',
+    theme: 'bootstrap',
+    debug: true
   },
   features : []
 },
-connect: {
-    express_handlebars: {
-      port: 3000
-    },
-    
-  }
   });
 
   grunt.loadNpmTasks('grunt-selenium-webdriver');
   grunt.loadNpmTasks('grunt-express-server');
-  grunt.loadNpmTasks('grunt-cucumber');
   grunt.loadNpmTasks('grunt-cucumberjs');
   grunt.loadNpmTasks('grunt-mocha-test');
 
   grunt.registerTask("spec", ["express:test", "cucumberjs"]);
   grunt.registerTask('apiTests', [
-        'express:apiTest',
+        'express:test',
         'mochaTest',
-        'express:apiTest:stop'
+        'express:test:stop'
     ]);
+  grunt.registerTask('spec', [
+      'express:test',
+      'cucumberjs',
+      'express:test:stop'
+    ]);
+
+  grunt.registerTask('allTests', [
+    'express:test',
+    'mochaTest',
+    'cucumberjs',
+    'express:test:stop']
+  );
 
 };

@@ -5,6 +5,5 @@ Feature: Front Page
   So that I can do things
 
   Scenario: Reading documentation
-    Given I am on the Cucumber.js GitHub repository
-    When I click on "CLI"
-    Then I should see "Running specific features"
+    When I am on the home page
+    Then I should see "Sky Box Control"
