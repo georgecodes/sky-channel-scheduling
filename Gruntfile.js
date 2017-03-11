@@ -10,7 +10,7 @@ module.exports = function(grunt) {
             },
             apiTest: {
               options: {
-                script: './api_server.js'
+                script: './server.js'
               }
             }
 
