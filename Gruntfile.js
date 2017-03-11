@@ -16,7 +16,7 @@ module.exports = function(grunt) {
           reporter: 'spec',
           clearRequireCache: true
         },
-        src: ['test/*.js']
+        src: ['test/functional/api/*.js']
       },
     
 },
@@ -37,7 +37,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-cucumberjs');
   grunt.loadNpmTasks('grunt-mocha-test');
 
-  grunt.registerTask("spec", ["express:test", "cucumberjs"]);
   grunt.registerTask('apiTests', [
         'express:test',
         'mochaTest',
