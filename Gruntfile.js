@@ -83,20 +83,15 @@ module.exports = function(grunt) {
 
 
 
-  grunt.registerTask('apiTests', function() {
-      grunt.option('env', 'test');
-      var tasks = ['env:test',
+  grunt.registerTask('apiTests', ['env:test',
         'migrate:run',
         'seed:run',
         'express:test',
         'mochaTest',
-        'express:test:stop'];
-        tasks.forEach(function(taskName) {
-          grunt.task.run(taskName);
-        });
+        'express:test:stop']);
 
-    }
-    );
+    
+   
   grunt.registerTask('spec', [
       'express:test',
       'cucumberjs',
