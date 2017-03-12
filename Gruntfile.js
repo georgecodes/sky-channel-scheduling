@@ -83,15 +83,16 @@ module.exports = function(grunt) {
   grunt.registerTask('apiTests', function() {
     grunt.option('env', 'test');
     var tasks = 
-    ['env:test',
+      ['env:test',
         'migrate:run',
         'seed:run',
         'express:test',
         'mochaTest',
         'express:test:stop'];
       tasks.forEach(function(taskName) {    
-           grunt.task.run(taskName);   
-                   });});
+           grunt.task.run(taskName);  
+           console.log("GRUNFILE ENV:" , grunt.option('env')); 
+       });});
 
   grunt.registerTask('spec', [
       'express:test',
