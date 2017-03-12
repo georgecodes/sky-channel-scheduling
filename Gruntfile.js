@@ -31,8 +31,7 @@ module.exports = function(grunt) {
       }
     },
     
-     knex: {
-     
+    knex: { 
       config: {
         development: {
           client: 'sqlite3',
@@ -40,39 +39,40 @@ module.exports = function(grunt) {
             connection: {
               filename: './databases/dev.sqlite3'
             },
-          migrations: {
-            directory: __dirname + '/migrations'
-          },
-          seeds: {
-            directory: __dirname + '/seeds'
-          }},
-          test: {
-          client: 'sqlite3',
-          useNullAsDefault: true,
-            connection: {
-              filename: './databases/test.sqlite3'
+            migrations: {
+              directory: __dirname + '/migrations'
             },
-          migrations: {
-            directory: __dirname + '/migrations'
+            seeds: {
+              directory: __dirname + '/seeds'
+            }
           },
-          seeds: {
-            directory: __dirname + '/seeds'
-          }
+          test: {
+            client: 'sqlite3',
+            useNullAsDefault: true,
+              connection: {
+                filename: './databases/test.sqlite3'
+              },
+              migrations: {
+                directory: __dirname + '/migrations'
+              },
+              seeds: {
+                directory: __dirname + '/seeds'
+              }
         
-        }
+            }
+          }
+      },
+      cucumberjs: {
+        options: {
+          format: 'html',
+          output: './reports/report.html',
+          theme: 'bootstrap',
+          debug: true
+        },
+        features : []
       }
-    },
-
-  cucumberjs: {
-  options: {
-    format: 'html',
-    output: './reports/report.html',
-    theme: 'bootstrap',
-    debug: true
-  },
-  features : []
-}
-  });
+    }
+  );
 
   grunt.loadNpmTasks('grunt-selenium-webdriver');
   grunt.loadNpmTasks('grunt-express-server');
