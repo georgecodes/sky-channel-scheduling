@@ -104,6 +104,9 @@ module.exports = function(grunt) {
     ]);
 
   grunt.registerTask('allTests', [
+    'env:test',
+    'migrate:run',
+    'seed:run',
     'express:test',
     'mochaTest',
     'cucumberjs',
