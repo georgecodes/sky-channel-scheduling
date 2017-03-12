@@ -2,7 +2,7 @@ module.exports = {
     db: {
         client: 'sqlite3',
         connection: {
-            filename: ':memory:test:'
+            filename: './databases/test.sqlite3'
         },
         migrations: {
             tableName: 'knex_migrations'

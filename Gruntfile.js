@@ -38,7 +38,7 @@ module.exports = function(grunt) {
           client: 'sqlite3',
           useNullAsDefault: true,
             connection: {
-              filename: './testd.sqlite3'
+              filename: './databases/dev.sqlite3'
             },
           migrations: {
             directory: __dirname + '/migrations'
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
           client: 'sqlite3',
           useNullAsDefault: true,
             connection: {
-              filename: ':memory:test:'
+              filename: './databases/test.sqlite3'
             },
           migrations: {
             directory: __dirname + '/migrations'

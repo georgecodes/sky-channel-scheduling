@@ -5,7 +5,7 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './dev.sqlite3'
+      filename: './databases/dev.sqlite3'
     },
     useNullAsDefault: true,
   },
@@ -13,7 +13,7 @@ module.exports = {
   test: {
     client: 'sqlite3',
     connection: {
-      filename: ':memory:test:'
+      filename: './databases/test.sqlite3'
     },
     migrations: {
       tableName: 'knex_migrations'
