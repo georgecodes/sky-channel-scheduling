@@ -5,6 +5,7 @@ var DBConfig = {
     }
 };
 
+console.log("IN DB.JS");
 var knex = require('knex')(require('../knexfile.js').development);
 var bookshelf = require('bookshelf')(knex);
 
