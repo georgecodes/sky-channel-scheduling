@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "grunt apiTests"
+    "test": "echo $PATH && grunt allTests "
   },
   "author": "",
   "license": "ISC",
