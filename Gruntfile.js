@@ -80,12 +80,18 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-knex');
   grunt.loadNpmTasks('grunt-env');
 
-  grunt.registerTask('apiTests', ['env:test',
+  grunt.registerTask('apiTests', function() {
+    grunt.option('env', 'test');
+    var tasks = 
+    ['env:test',
         'migrate:run',
         'seed:run',
         'express:test',
         'mochaTest',
-        'express:test:stop']);
+        'express:test:stop'];
+      tasks.forEach(function(taskName) {    
+           grunt.task.run(taskName);   
+                   });});
 
   grunt.registerTask('spec', [
       'express:test',
