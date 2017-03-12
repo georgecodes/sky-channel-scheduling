@@ -5,7 +5,7 @@ var DBConfig = {
     }
 };
 
-var knex = require('knex')(require('../knexfile.js').developments);
+var knex = require('knex')(require('../knexfile.js').development);
 var bookshelf = require('bookshelf')(knex);
 
 module.exports.bookshelf = bookshelf;
