@@ -90,25 +90,42 @@ module.exports = function(grunt) {
         'mochaTest',
         'express:test:stop'];
       tasks.forEach(function(taskName) {   
-      console.log("GRUNFILE ENV:" , grunt.option('env'));  
+      
            grunt.task.run(taskName);  
 
        });});
 
-  grunt.registerTask('spec', [
-      'express:test',
-      'cucumberjs',
-      'express:test:stop'
-    ]);
+  grunt.registerTask('spec', function() {
+    grunt.option('env', 'test');
+    var tasks = 
+      ['env:test',
+        'migrate:run',
+        'seed:run',
+        'express:test',
+        'cucumberks',
+        'express:test:stop'];
+      tasks.forEach(function(taskName) {   
+      
+           grunt.task.run(taskName);  
 
-  grunt.registerTask('allTests', [
-    'env:test',
-    'migrate:run',
-    'seed:run',
-    'express:test',
-    'mochaTest',
-    'cucumberjs',
-    'express:test:stop']
-  );
+       });});
+
+  grunt.registerTask('allTests', function() {
+    grunt.option('env', 'test');
+    var tasks = 
+      ['env:test',
+        'migrate:run',
+        'seed:run',
+        'express:test',
+        'mochaTest',
+        'cucumberjs',
+        'express:test:stop'];
+      tasks.forEach(function(taskName) {   
+    
+           grunt.task.run(taskName);  
+
+       });});
+
+
 
 };
