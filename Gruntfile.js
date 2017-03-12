@@ -89,9 +89,10 @@ module.exports = function(grunt) {
         'express:test',
         'mochaTest',
         'express:test:stop'];
-      tasks.forEach(function(taskName) {    
+      tasks.forEach(function(taskName) {   
+      console.log("GRUNFILE ENV:" , grunt.option('env'));  
            grunt.task.run(taskName);  
-           console.log("GRUNFILE ENV:" , grunt.option('env')); 
+
        });});
 
   grunt.registerTask('spec', [
