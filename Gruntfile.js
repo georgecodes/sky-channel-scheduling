@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
 
-  // Project configuration.
   grunt.initConfig({
     
     env : {
@@ -81,8 +80,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-knex');
   grunt.loadNpmTasks('grunt-env');
 
-
-
   grunt.registerTask('apiTests', ['env:test',
         'migrate:run',
         'seed:run',
@@ -90,8 +87,6 @@ module.exports = function(grunt) {
         'mochaTest',
         'express:test:stop']);
 
-    
-   
   grunt.registerTask('spec', [
       'express:test',
       'cucumberjs',
