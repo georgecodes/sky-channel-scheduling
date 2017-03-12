@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     
     env : {
       options : {
-      //Shared Options Hash
+      
       },
       dev : {
         NODE_ENV : 'development'
@@ -38,27 +38,27 @@ module.exports = function(grunt) {
           client: 'sqlite3',
           useNullAsDefault: true,
             connection: {
-              filename: './test.sqlite3'
+              filename: './testd.sqlite3'
             },
           migrations: {
             directory: __dirname + '/migrations'
           },
           seeds: {
             directory: __dirname + '/seeds'
-          },
+          }},
           test: {
           client: 'sqlite3',
           useNullAsDefault: true,
             connection: {
-              filename: './test.sqlite3'
+              filename: ':memory:test:'
             },
           migrations: {
-            directory: __dirname + 'migrations'
+            directory: __dirname + '/migrations'
           },
           seeds: {
-            directory: __dirname + 'seeds'
+            directory: __dirname + '/seeds'
           }
-        }
+        
         }
       }
     },
@@ -83,15 +83,20 @@ module.exports = function(grunt) {
 
 
 
-  grunt.registerTask('apiTests', [
-
-        'env:test',
+  grunt.registerTask('apiTests', function() {
+      grunt.option('env', 'test');
+      var tasks = ['env:test',
         'migrate:run',
         'seed:run',
         'express:test',
         'mochaTest',
-        'express:test:stop'
-    ]);
+        'express:test:stop'];
+        tasks.forEach(function(taskName) {
+          grunt.task.run(taskName);
+        });
+
+    }
+    );
   grunt.registerTask('spec', [
       'express:test',
       'cucumberjs',

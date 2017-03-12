@@ -13,7 +13,7 @@ module.exports = {
   test: {
     client: 'sqlite3',
     connection: {
-      filename: './test.sqlite3'
+      filename: ':memory:test:'
     },
     migrations: {
       tableName: 'knex_migrations'
