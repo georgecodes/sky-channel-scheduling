@@ -2,7 +2,7 @@ var express = require("express");
 
 var ApiV1 = function(config) {
 
-	console.log("ENV", process.env.NODE_ENV);
+	console.log("ENV", process.env.NODE_ENV, config);
 
 	var SkyBox = require('./../models/SkyBox');
 	var router = express.Router();
