@@ -102,7 +102,7 @@ module.exports = function(grunt) {
         'migrate:run',
         'seed:run',
         'express:test',
-        'cucumberks',
+        'cucumberjs',
         'express:test:stop'];
       tasks.forEach(function(taskName) {   
       
